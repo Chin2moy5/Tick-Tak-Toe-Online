@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Multiplayer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Online Multiplayer</h1>
+
+    <div id="choose-section">
+      <button id="createRoomBtn">➕ Create Room</button>
+      <button id="joinRoomBtn">🔗 Join Room</button>
+    </div>
+
+    <div id="create-section" style="display:none;">
+      <h2>Room Created!</h2>
+      <p>Share this code with your friend:</p>
+      <div id="roomCode" class="room-code"></div>
+      <div class="waiting">
+        <div class="spinner"></div>
+        <p>Waiting for opponent...</p>
+      </div>
+    </div>
+
+    <div id="join-section" style="display:none;">
+      <input type="text" id="roomInput" placeholder="Enter Room Code">
+      <button id="joinBtn">Join Room</button>
+    </div>
+
+    <div id="game-section" style="display:none;">
+      <div id="status">Waiting for opponent...</div>
+      <div class="board" id="board"></div>
+      <button onclick="location.href='index.html'">🏠 Return Home</button>
+      <button id="restartBtn" style="display:none;">🔁 Restart</button>
+    </div>
+
+  </div>
+  <script src="online.js"></script>
+</body>
+</html>
